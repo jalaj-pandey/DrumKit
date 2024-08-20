@@ -2,6 +2,12 @@ var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for (let i = 0; i < numberOfDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click",function(){
         var buttonInnerHtml = this.innerHtml;
+        makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
+    });
+
+    document.querySelectorAll(".drum")[i].addEventListener("touchstart", function() {
+        var buttonInnerHtml = this.innerHTML;
         makeSound(buttonInnerHtml);
         buttonAnimation(buttonInnerHtml);
     });
