@@ -1,27 +1,24 @@
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 for (let i = 0; i < numberOfDrumButtons; i++) {
-    // Selecting the drum buttons and adding event listeners for both click and touchstart
     var drumButton = document.querySelectorAll(".drum")[i];
     
-    // Add click event listener
     drumButton.addEventListener("click", function() {
-        var buttonInnerHTML = this.innerHTML; // Correct property name
-        console.log("Button clicked: " + buttonInnerHTML); // Log for debugging
+        var buttonInnerHTML = this.innerHTML; 
+        console.log("Button clicked: " + buttonInnerHTML); 
         makeSound(buttonInnerHTML);
         buttonAnimation(buttonInnerHTML);
     });
 
-    // Add touchstart event listener
     drumButton.addEventListener("touchstart", function() {
         var buttonInnerHTML = this.innerHTML;
-        console.log("Button touched: " + buttonInnerHTML); // Log for debugging
+        console.log("Button touched: " + buttonInnerHTML); 
         makeSound(buttonInnerHTML);
         buttonAnimation(buttonInnerHTML);
     });
 }
 
 document.addEventListener("keypress", function(e) {
-    console.log("Key pressed: " + e.key); // Log for debugging
+    console.log("Key pressed: " + e.key); 
     makeSound(e.key);
     buttonAnimation(e.key);
 });
